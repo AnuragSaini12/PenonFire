@@ -1119,6 +1119,22 @@
       STYLE SWITCHER | ONLY FOR DEMO NOT INCLUDED IN MAIN FILES
   ============================================================== -->
     <script src="demo/demo.js"></script>
+
+    <script>
+        document.addEventListener('contextmenu', e => e.preventDefault());
+
+        document.addEventListener('keydown', function (e) {
+            if (
+                e.key === "F12" ||
+                (e.ctrlKey && e.key.toLowerCase() === "u") ||
+                (e.ctrlKey && e.shiftKey && ["i", "j", "c"].includes(e.key.toLowerCase())) ||
+                (e.ctrlKey && ["s", "p"].includes(e.key.toLowerCase()))
+            ) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
 </body>
 
 </html>
